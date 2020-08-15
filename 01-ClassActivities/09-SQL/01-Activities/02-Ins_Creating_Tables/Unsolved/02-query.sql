@@ -20,6 +20,8 @@ FROM people;
 SELECT pet_name
 FROM people;
 
+DROP TABLE people;
+
 SELECT pet_type, pet_name
 FROM people
 WHERE pet_type = 'dog'
