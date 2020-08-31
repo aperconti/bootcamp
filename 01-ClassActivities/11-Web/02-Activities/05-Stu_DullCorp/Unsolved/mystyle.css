@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    background-color: purple;
+    color: blue;
+  }
+
+  h2{
+background-color:yellow ;
+color: violet;
+  }
+
+  h3{
+color: hotpink;
+
+  }
+
+
+
+  img{
+box-shadow: 10px 10px 5px green; 
+  }

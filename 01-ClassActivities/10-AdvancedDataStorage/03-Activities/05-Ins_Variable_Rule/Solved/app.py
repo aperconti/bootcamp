@@ -27,6 +27,12 @@ def justice_league():
 
     return jsonify(justice_league_members)
 
+@app.route("/autum")
+def autum():
+    return (
+        "Hi"
+    )
+
 
 @app.route("/")
 def welcome():

@@ -31,6 +31,32 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
+@app.route("/")
+def welcome():
+    """List all available api routes."""
+    return (
+        f"Available Routes:<br/>"
+        f"<a href='/api/v1.0/country'>country</a><br/>"
+    
+    )
+
+
+# @app.route("/api/v1.0/names")
+# def names():
+#     # Create our session (link) from Python to the DB
+#     session = Session(engine)
+
+#     """Return a list of all passenger names"""
+#     # Query all passengers
+#     results = session.query(Passenger.name).all()
+
+#     session.close()
+#     print(results)
+#     # Convert list of tuples into normal list
+#     all_names = list(np.ravel(results))
+
+#     return jsonify(all_names)
+
 
 ## YOUR CODE HERE ########
 

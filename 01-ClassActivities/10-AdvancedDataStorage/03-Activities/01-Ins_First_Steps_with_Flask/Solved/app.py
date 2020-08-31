@@ -5,7 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-# 3. Define what to do when a user hits the index route
+# 3. Define what to do whpwden a user hits the index route
 @app.route("/")
 def home():
     print("Server received request for 'Home' page...")
