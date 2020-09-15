@@ -15,6 +15,24 @@
     <div>
 
         <!-- @TODO: write a for loop that lists out your data and accesses the values using dot notation. -->
+        <!-- check to see if there's any data in inventory -->
+        {% if inventory|length > 0 %}
+        <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+        {% for item in inventory %}
+        <div class="col-lg-4">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.type }}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.cost }}</h6>
+                    <p class="card-text">Potential Revenue: {{ item.cost * item.stock}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div><a href="{{url_for('delete_all')}}">Remove all data!</a></div>
+        {% else %}
+        <div><a href="{{url_for('insert_all')}}">There's no data! Click me to insert all!</a></div>
+        {% endif %}
 
     </div>
   </div>
