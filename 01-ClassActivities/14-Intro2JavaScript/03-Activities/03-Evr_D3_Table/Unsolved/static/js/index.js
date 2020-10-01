@@ -6,10 +6,12 @@ console.log(data);
 
 // Step 1: Loop Through `data` and console.log each weather report object
 data.forEach(weatherReport => console.log(weatherReport));
-  
+
 // Step 2:  Use d3 to append one table row `tr` for each weather report object
 // Don't worry about adding cells or text yet, just try appending the `tr` elements.
-
+data.forEach(weatherReport =>{
+    let row = tbody.append("tr");
+});
 
 // Step 3:  Use `Object.entries` to console.log each weather report value
 
