@@ -2,11 +2,15 @@
 
 
 // Create an empty array to add the numbers.
-
+var powerBallNumbers = [];
 
 // Create a for loop to generate 5 random numbers between 1 and 59.
 
+for (var i = 0 ; i < 5 ; i++) {
+    powerBallNumbers.push(Math.floor(Math.random() * 59) + 1)));
+}
 
+// console.log("Math.floor(Math.random() * 10)", Math.floor(Math.random() * 10) + 1);
 //  Check your numbers.
 console.log(powerBallNumbers);
 
@@ -14,7 +18,7 @@ console.log(powerBallNumbers);
 
 
 //  Check your numbers.
-console.log(powerBallNumbers);
+// console.log(powerBallNumbers);
 
 
 //  Additional bonus.

@@ -10,7 +10,11 @@
 </head>
 <body>
     <h2>Streaming Music By Country</h2>
-        <!-- Your code here -->
+        <select id="selDataset" onchange="getData(this.value)">
+            <option value= "us">United State</option>
+            <option value="uk"> United Kingdom</option>
+            <option value="ca">Canada</option>
+        </select>
     <div id="pie"></div>
 
     <script src="data.js"></script>

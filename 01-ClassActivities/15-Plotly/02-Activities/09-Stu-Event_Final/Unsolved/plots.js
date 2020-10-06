@@ -4,3 +4,12 @@ var uk = Object.values(data.uk);
 var canada = Object.values(data.canada);
 
 // @ADD YOUR CODE HERE
+
+var labels = Object.keys(data.us);
+
+function init() {
+    var data = [{
+        values: us,
+        labels: labels,
+        type: "pie"
+    }];
