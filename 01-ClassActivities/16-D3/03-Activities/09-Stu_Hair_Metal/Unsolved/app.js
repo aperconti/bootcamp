@@ -25,15 +25,33 @@ d3.csv("hairData.csv").then(hairData => {
 
     // Step 1: Parse Data/Cast as numbers
     // ==============================
+    hairData.forEach(data => {
+        data.hair_length = +data.hair_length;
+        data.num_hits = +data.num_hits;
+    });
+
 
     // Step 2: Create scale functions
     // ==============================
 
+    var  xscale = d3.scaleLinear()
+        .domain([ 20, d3.max(hairData, d => d.hair_length)])
+        .range([0, width]);
+
+    var Yscale = d3.scaleLinear()
+        .domain([20, d3.max(hairData, d => d.num_hits)])
+        .range([height, 0]);
+
     // Step 3: Create axis functions
     // ==============================
 
+    // create axes
+    var xAxis = d3.axisBottom(xscale);
+    var yAxis = d3.axisLeft(Yscale);
+
     // Step 4: Append Axes to the chart
     // ==============================
+
 
     // Step 5: Create Circles
     // ==============================

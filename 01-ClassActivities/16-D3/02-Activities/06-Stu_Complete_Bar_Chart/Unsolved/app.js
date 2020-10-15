@@ -26,21 +26,36 @@ var chartGroup = svg.append("g")
 
 // Load data from hours-of-tv-watched.csv
 // YOUR CODE HERE
+d3.csv("hours-of-tv-watched.csv", d3.autoType).then(function(tvData){
+
+
 
   // Cast the hours value to a number for each piece of tvData
 
 
   // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
+    var xbandScale = d3.scaleBand()
+        .domain(tvData.map( d => d.name))
+        .range([0, chartWidth])
+        .padding(0.1)
+
+
+
 
 
   // Create a linear scale for the vertical axis.
 
+var ylinearScale = d3.scaleLinear()
+    .domain([0, d3.max(tvData, d => d.hours)])
+    .range([chartHeight, 0])
 
   // Create two new axes functions passing our scales in as arguments
-
+var leftAxis = d3.leftAxis(ylinearScale);
+var bottomAxis = d3.bottomAxis(xbandScale);
 
   // Append two SVG group elements to the chartGroup area,
   // and create the bottom and left axes inside of them
 
   // Create one SVG rectangle per piece of tvData
   // Use the linear and band scales to position each rectangle within the chart
+})

@@ -50,11 +50,38 @@ chartGroup.append("path")
 var circlesGroup = chartGroup.selectAll("circle")
   .data(pizzasEatenByMonth)
   .join("circle")
-  .attr("cx", (d, i) => xScale(i))
-  .attr("cy", d => yScale(d))
+//   .attr("cx", (d, i) => xScale(i))
+//   .attr("cy", d => yScale(d))
   .attr("r", "10")
   .attr("fill", "red");
 
 // YOUR CODE HERE
+
+// Create the event listeners with transitions
+var t = d3.transition()
+    .duration(1500)
+    .ease(d3.easeBounceOut)
+    // .delay(500)
+
+circlesGroup.on("mouseover", function () {
+    d3.select(this).transition(t)
+        .attr("fill", "red")
+        .attr("r", "10")
+        .attr("fill", "red");
+})
+    .on("mouseout", function () {
+        d3.select(this).transition(t)
+            .attr("fill", "green");
+    });
+
+circlesGroup.on()
+selectAll("circle").transition(t)
+    .attr("cx", (d, i) => xScale(i))
+    .attr("cy", d => yScale(d))
+
+
+
+
+
 
 

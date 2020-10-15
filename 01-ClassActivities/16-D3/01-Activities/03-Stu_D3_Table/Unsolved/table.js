@@ -25,3 +25,15 @@ var austinWeather = [{
 }
 ];
 // YOUR CODE HERE
+
+d3.select("tbody")
+    .selectAll("tr")
+    .data(austinWeather)
+    .enter()
+    .append("tr")
+        .selectAll("td")
+        .data(d => Object.entries(d))
+        .enter()
+        .append("td")
+        .html(d => d[1])
+
