@@ -14,23 +14,20 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
 
-d3.json(url).then(response => {
+// d3.json(url).then(response => {
 
-  console.log(response);
+//   console.log(response);
 
-  var heatArray = [];
+//   var heatArray = [];
 
-  for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+//   for (var i = 0; i < response.length; i++) {
+//     var location = response[i].location;
 
-    if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
-    }
-  }
+//     if (location) {
+//       heatArray.push([location.coordinates[1], location.coordinates[0]]);
+//     }
+//   }
 
-  var heat = L.heatLayer(heatArray, {
-    radius: 20,
-    blur: 35
-  }).addTo(myMap);
+
 
 });
